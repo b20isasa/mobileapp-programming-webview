@@ -4,14 +4,19 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
+    WebView myWebView;
 
     public void showExternalWebPage(){
         // TODO: Add your code for showing external web page here
+
     }
 
     public void showInternalWebPage(){
@@ -24,8 +29,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        myWebView = findViewById(R.id.nystring);
+
+        myWebView.setWebViewClient(new WebViewClient()); // Do not open in Chrome!
+        myWebView.loadUrl("https://his.se");
+        WebSettings webSettings = myWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
+
+
 
         /*
+
         * Rename your App. Tip: Values->Strings
         * Enable Internet access for your App. Tip: Manifest
         * Create a WebView element in the layout file main_activity.xml
