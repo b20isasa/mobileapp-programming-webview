@@ -15,7 +15,7 @@ Här visas hur en extern webbplats och intern Webview visas i applikationen. På
 
 
 
- För att de ska visas när menyn klickas så används denna kod. 
+ För att de ska visas när menyn klickas så används denna kod. Vad som visas nedan är kod för extern och intern webbapplikation. 
 
    @Override
    public boolean onOptionsItemSelected(MenuItem item) {
